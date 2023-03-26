@@ -3,6 +3,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 // * components
 import Sidebar from '../features/Sidebar';
 import Breadcrumbs from '../components/Breadcrumbs';
+import Footer from '../features/Footer';
 
 // * types
 type MainLayoutProps = {
@@ -25,6 +26,10 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
               {title}
             </h1>
           </header>
+          <div className='content grid grid-cols-12 auto-rows-max gap-3 mt-6'>
+            {children}
+          </div>
+          <Footer />
         </main>
       </div>
     </HelmetProvider>
