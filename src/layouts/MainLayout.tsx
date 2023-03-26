@@ -15,7 +15,7 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>{children}</title>
+        <title>{title}</title>
       </Helmet>
       <div className='layout-wrap grid grid-cols-[50px,_1fr] md:grid-cols-[270px,_1fr] grid-rows-1 h-screen overflow-hidden'>
         <Sidebar />
