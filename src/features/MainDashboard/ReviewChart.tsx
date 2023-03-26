@@ -48,7 +48,7 @@ const ReviewChart = () => {
           This Month
         </Button>
         <h5 className='text-navy dark:text-white text-2xl font-bold'>$37.5K</h5>
-        <div className='flex gap-x-2 whitespace-nowrap text-xs text-neutral-light'>
+        <div className='flex gap-x-2 whitespace-nowrap text-xs text-neutral'>
           Total Spent
           <span className='text-green-500'>
             <i className='fa-solid fa-caret-up mr-1' />
