@@ -5,10 +5,12 @@ import MainDashboard from '../pages';
 import Marketplace from '../pages/Marketplace';
 import Tables from '../pages/Tables';
 import Kanban from '../pages/Kanban';
+import Profile from '../pages/Profile';
 
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path='/profile' element={<Profile />} />
       <Route path='/kanban' element={<Kanban />} />
       <Route path='/tables' element={<Tables />} />
       <Route path='/marketplace' element={<Marketplace />} />
