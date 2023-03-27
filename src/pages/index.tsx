@@ -11,6 +11,7 @@ import ComplexTable from '../features/MainDashboard/ComplexTable';
 import TasksList from '../features/MainDashboard/TasksList';
 import Calendar from '../components/Calendar';
 import Tutorials from '../features/MainDashboard/Tutorials';
+import TeamMembers from '../features/MainDashboard/TeamMembers';
 
 const MainDashboard = () => {
   return (
@@ -24,6 +25,7 @@ const MainDashboard = () => {
       <TasksList />
       <Calendar />
       <Tutorials />
+      <TeamMembers />
     </MainLayout>
   );
 };
