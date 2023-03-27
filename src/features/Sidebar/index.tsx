@@ -1,17 +1,24 @@
 // * components
 import Card from '../../components/Card';
+import Link from '../../components/Link';
 import SidebarLink from './SidebarLink';
 
 const Sidebar = () => {
   return (
-    <aside className='flex flex-col justify-between dark:bg-d-primary py-5'>
-      <header className='py-6'>
-        <h1 className='logo text-2xl text-center text-primary text-white'>
+    <aside className='sidebar flex flex-col justify-between dark:bg-d-primary py-5'>
+      <header className='sidebar-header text-center py-6'>
+        <Link
+          href='/'
+          size='none'
+          radius='none'
+          variant='none'
+          className='logo text-2xl text-primary dark:text-white'
+        >
           <span className='font-bold'>
             H<span className='hidden md:inline'>ORIZON&nbsp;</span>
           </span>
           F<span className='hidden md:inline'>REE</span>
-        </h1>
+        </Link>
       </header>
       <nav className='grow'>
         <SidebarLink icon='fa-home' title='Dashboard' href='/' />
