@@ -13,6 +13,7 @@ import Calendar from '../components/Calendar';
 import Tutorials from '../features/MainDashboard/Tutorials';
 import TeamMembers from '../features/MainDashboard/TeamMembers';
 import ControlAndSecurity from '../features/MainDashboard/ControlAndSecurity';
+import Offers from '../features/MainDashboard/Offers';
 
 const MainDashboard = () => {
   return (
@@ -28,6 +29,7 @@ const MainDashboard = () => {
       <Tutorials />
       <TeamMembers />
       <ControlAndSecurity />
+      <Offers />
     </MainLayout>
   );
 };
