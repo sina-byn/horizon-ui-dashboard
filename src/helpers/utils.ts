@@ -2,6 +2,8 @@
 import type { Children } from '../components/Typography';
 import type { Status } from '../components/Tag';
 
+const toPercent = (value: number, base: number) => (value / base) * 100;
+
 const capitalize = (str: string) =>
   str.slice(0, 1).toUpperCase() + str.slice(1);
 
@@ -196,6 +198,7 @@ const getTagClassName = (status: Status) => {
 };
 
 export {
+  toPercent,
   capitalize,
   isTouchScreen,
   searchByQuery,
