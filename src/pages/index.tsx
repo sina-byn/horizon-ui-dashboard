@@ -12,6 +12,7 @@ import TasksList from '../features/MainDashboard/TasksList';
 import Calendar from '../components/Calendar';
 import Tutorials from '../features/MainDashboard/Tutorials';
 import TeamMembers from '../features/MainDashboard/TeamMembers';
+import ControlAndSecurity from '../features/MainDashboard/ControlAndSecurity';
 
 const MainDashboard = () => {
   return (
@@ -26,6 +27,7 @@ const MainDashboard = () => {
       <Calendar />
       <Tutorials />
       <TeamMembers />
+      <ControlAndSecurity />
     </MainLayout>
   );
 };
