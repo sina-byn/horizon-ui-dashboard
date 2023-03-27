@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout';
 
 // * components
+import Overview from '../features/MainDashboard/Overview';
 import ReviewChart from '../features/MainDashboard/ReviewChart';
 import WeeklyRevenueChart from '../features/MainDashboard/WeeklyRevenueChart';
 import CheckTable from '../features/MainDashboard/CheckTable';
@@ -18,6 +19,7 @@ import Offers from '../features/MainDashboard/Offers';
 const MainDashboard = () => {
   return (
     <MainLayout title='Main Dashboard'>
+      <Overview />
       <ReviewChart />
       <WeeklyRevenueChart />
       <CheckTable />
