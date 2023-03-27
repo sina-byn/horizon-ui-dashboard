@@ -46,6 +46,14 @@ const searchByQuery = <TElement extends HTMLElement>(
     text.slice(queryIdx + query.length);
 };
 
+const formatNumber = (num: number) => {
+  if (num < 1000) return num;
+  if (num >= 1000 && num < 1000000) return Math.floor(num / 1000) + 'K';
+  if (num >= 1000000 && num < 1000000000)
+    return Math.floor(num / 1000000) + 'M';
+  return Math.floor(num / 1000000000) + 'B';
+};
+
 const getTagClassName = (status: Status) => {
   switch (status) {
     case 'approved':
@@ -77,4 +85,4 @@ const getTagClassName = (status: Status) => {
   }
 };
 
-export { capitalize, searchByQuery, getTagClassName };
+export { capitalize, searchByQuery, formatNumber, getTagClassName };

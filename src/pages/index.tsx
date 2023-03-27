@@ -10,6 +10,7 @@ import YourPieChart from '../features/MainDashboard/YourPieChart';
 import ComplexTable from '../features/MainDashboard/ComplexTable';
 import TasksList from '../features/MainDashboard/TasksList';
 import Calendar from '../components/Calendar';
+import Tutorials from '../features/MainDashboard/Tutorials';
 
 const MainDashboard = () => {
   return (
@@ -22,6 +23,7 @@ const MainDashboard = () => {
       <ComplexTable />
       <TasksList />
       <Calendar />
+      <Tutorials />
     </MainLayout>
   );
 };
