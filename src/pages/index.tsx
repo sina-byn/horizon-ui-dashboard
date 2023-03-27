@@ -7,6 +7,7 @@ import WeeklyRevenueChart from '../features/MainDashboard/WeeklyRevenueChart';
 import CheckTable from '../features/MainDashboard/CheckTable';
 import DailyTrafficChart from '../features/MainDashboard/DailyTrafficChart';
 import YourPieChart from '../features/MainDashboard/YourPieChart';
+import ComplexTable from '../features/MainDashboard/ComplexTable';
 
 const MainDashboard = () => {
   return (
@@ -16,6 +17,7 @@ const MainDashboard = () => {
       <CheckTable />
       <DailyTrafficChart />
       <YourPieChart />
+      <ComplexTable />
     </MainLayout>
   );
 };

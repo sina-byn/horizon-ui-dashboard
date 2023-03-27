@@ -1,5 +1,6 @@
 // * types
 import type { Children } from '../components/Typography';
+import type { Status } from '../components/Tag';
 
 const capitalize = (str: string) =>
   str.slice(0, 1).toUpperCase() + str.slice(1);
@@ -45,4 +46,35 @@ const searchByQuery = <TElement extends HTMLElement>(
     text.slice(queryIdx + query.length);
 };
 
-export { capitalize, searchByQuery };
+const getTagClassName = (status: Status) => {
+  switch (status) {
+    case 'approved':
+    case 'done':
+      return [
+        'fa-check-circle',
+        'bg-green-500 text-white',
+        'text-green-500 bg-none',
+      ];
+    case 'disabled':
+    case 'pending':
+      return [
+        'fa-circle-info',
+        'bg-orange-400 text-white',
+        'text-orange-400 bg-none',
+      ];
+    case 'error':
+      return [
+        'fa-circle-xmark',
+        'bg-red-500 text-white',
+        'text-red-500 bg-none',
+      ];
+    case 'updating':
+      return [
+        'fa-arrow-up',
+        'bg-blue-500 text-white',
+        'text-primary-light bg-none',
+      ];
+  }
+};
+
+export { capitalize, searchByQuery, getTagClassName };
