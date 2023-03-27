@@ -5,6 +5,7 @@ import MainLayout from '../layouts/MainLayout';
 import ReviewChart from '../features/MainDashboard/ReviewChart';
 import WeeklyRevenueChart from '../features/MainDashboard/WeeklyRevenueChart';
 import CheckTable from '../features/MainDashboard/CheckTable';
+import DailyTrafficChart from '../features/MainDashboard/DailyTrafficChart';
 
 const MainDashboard = () => {
   return (
@@ -12,6 +13,7 @@ const MainDashboard = () => {
       <ReviewChart />
       <WeeklyRevenueChart />
       <CheckTable />
+      <DailyTrafficChart />
     </MainLayout>
   );
 };
