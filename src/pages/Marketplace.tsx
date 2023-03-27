@@ -5,6 +5,8 @@ import MainLayout from '../layouts/MainLayout';
 import MarketplaceBanner from '../features/Marketplace/MarketplaceBanner';
 import TrendingNfts from '../features/Marketplace/TrendingNfts';
 import RecentlyAddedNfts from '../features/Marketplace/RecentlyAddedNfts';
+import TopCreatorsTable from '../features/Marketplace/TopCreatorsTable';
+import HistoryTable from '../features/Marketplace/HistoryTable';
 
 const Marketplace = () => {
   return (
@@ -15,7 +17,8 @@ const Marketplace = () => {
         <RecentlyAddedNfts />
       </div>
       <div className='content-column col-span-12 xl:col-span-4 flex flex-col gap-y-4'>
-        {/* second column */}
+        <TopCreatorsTable />
+        <HistoryTable />
       </div>
     </MainLayout>
   );

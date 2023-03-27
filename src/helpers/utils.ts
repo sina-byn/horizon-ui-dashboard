@@ -59,6 +59,39 @@ const formatNumber = (num: number) => {
   return Math.floor(num / 1000000000) + 'B';
 };
 
+const formatElapsedTime = (ms: number) => {
+  const elapsedSeconds = Math.floor(ms / 1000),
+    elapsedMinutes = Math.floor(elapsedSeconds / 60),
+    elapsedHours = Math.floor(elapsedMinutes / 60),
+    elapsedDays = Math.floor(elapsedHours / 24),
+    elapsedMonths = Math.floor(elapsedDays / 30),
+    elapsedYears = Math.floor(elapsedMonths / 12),
+    elaspedTimeArray = [
+      elapsedSeconds,
+      elapsedMinutes,
+      elapsedHours,
+      elapsedDays,
+      elapsedMonths,
+      elapsedYears,
+    ],
+    timeUnits = ['s', 'm', 'h', 'd', 'm', 'y'];
+
+  let result: number | undefined,
+    timeUnit: string = 's';
+
+  elaspedTimeArray.forEach((time, idx) => {
+    const timeSet = new Set(elaspedTimeArray);
+    if (timeSet.size === 1 && elaspedTimeArray[0] === 0) result = 0;
+    else if (result === undefined) result = time;
+    else if (time !== 0) {
+      if (result > time) timeUnit = timeUnits[idx];
+      result = Math.min(result, time);
+    }
+  });
+
+  return result + timeUnit;
+};
+
 const getTagClassName = (status: Status) => {
   switch (status) {
     case 'approved':
@@ -95,5 +128,6 @@ export {
   isTouchScreen,
   searchByQuery,
   formatNumber,
+  formatElapsedTime,
   getTagClassName,
 };
