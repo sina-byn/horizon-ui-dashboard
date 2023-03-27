@@ -8,6 +8,7 @@ import CheckTable from '../features/MainDashboard/CheckTable';
 import DailyTrafficChart from '../features/MainDashboard/DailyTrafficChart';
 import YourPieChart from '../features/MainDashboard/YourPieChart';
 import ComplexTable from '../features/MainDashboard/ComplexTable';
+import TasksList from '../features/MainDashboard/TasksList';
 
 const MainDashboard = () => {
   return (
@@ -18,6 +19,7 @@ const MainDashboard = () => {
       <DailyTrafficChart />
       <YourPieChart />
       <ComplexTable />
+      <TasksList />
     </MainLayout>
   );
 };
