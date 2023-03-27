@@ -7,6 +7,7 @@ import StorageCard from '../features/Profile/StorageCard';
 import ImageUpload from '../features/Profile/ImageUpload';
 import Projects from '../features/Profile/Projects';
 import GeneralInformation from '../features/Profile/GeneralInformation';
+import Notifications from '../features/Profile/Notifications';
 
 const Profile = () => {
   return <MainLayout title='Profile'>
@@ -15,6 +16,7 @@ const Profile = () => {
     <ImageUpload />
     <Projects />
     <GeneralInformation />
+    <Notifications />
   </MainLayout>;
 };
 

@@ -1,6 +1,9 @@
 // * react-helmet-async
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
+// * react-toastify
+import { ToastContainer } from 'react-toastify';
+
 // * context-providers
 import SearchContextProvider from '../context/SearchContextProvider';
 
@@ -39,6 +42,7 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
           </main>
         </SearchContextProvider>
       </div>
+      <ToastContainer autoClose={2000} pauseOnFocusLoss={false} pauseOnHover />
     </HelmetProvider>
   );
 };

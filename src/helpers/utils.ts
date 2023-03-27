@@ -166,6 +166,31 @@ const sortTableData = <TRowData>({
   return newData.slice();
 };
 
+const notify = (message: string) => {
+  if (isTouchScreen()) return;
+
+  if (!('Notification' in window))
+    return alert('Your browser does not support desktop notification');
+
+  const title = 'Horizon UI Admin Dashboard';
+  const options = {
+    body: message,
+  };
+
+  if (Notification.permission === 'granted') {
+    new Notification(title, options);
+    return;
+  }
+
+  if (Notification.permission !== 'denied') {
+    Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        new Notification(title, options);
+      }
+    });
+  }
+};
+
 const getTagClassName = (status: Status) => {
   switch (status) {
     case 'approved':
@@ -205,5 +230,6 @@ export {
   formatNumber,
   formatElapsedTime,
   sortTableData,
+  notify,
   getTagClassName,
 };
