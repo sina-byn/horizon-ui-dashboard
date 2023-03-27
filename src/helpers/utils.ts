@@ -5,6 +5,11 @@ import type { Status } from '../components/Tag';
 const capitalize = (str: string) =>
   str.slice(0, 1).toUpperCase() + str.slice(1);
 
+const isTouchScreen = () =>
+  'ontouchstart' in window ||
+  navigator.maxTouchPoints > 0 ||
+  'msMaxTouchPoints' in navigator;
+
 const searchByQuery = <TElement extends HTMLElement>(
   query: string,
   ref: React.RefObject<TElement>,
@@ -85,4 +90,10 @@ const getTagClassName = (status: Status) => {
   }
 };
 
-export { capitalize, searchByQuery, formatNumber, getTagClassName };
+export {
+  capitalize,
+  isTouchScreen,
+  searchByQuery,
+  formatNumber,
+  getTagClassName,
+};
