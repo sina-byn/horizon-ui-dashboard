@@ -113,11 +113,11 @@ const PieChart = ({
           ))}
         </Pie>
         <Tooltip
+          wrapperStyle={{ outline: 'none' }}
           content={
             <CustomTooltip className='bg-white dark:bg-d-primary dark:text-white' />
           }
         />
-        {/* <Tooltip /> */}
       </RePieChart>
     </ChartWrapper>
   );
