@@ -92,6 +92,78 @@ const formatElapsedTime = (ms: number) => {
   return result + timeUnit;
 };
 
+const getMonthNo = (month: string) => {
+  switch (month.toLowerCase()) {
+    case 'jan':
+      return 1;
+    case 'feb':
+      return 2;
+    case 'mar':
+      return 3;
+    case 'apr':
+      return 4;
+    case 'may':
+      return 5;
+    case 'jun':
+      return 6;
+    case 'jul':
+      return 7;
+    case 'aug':
+      return 8;
+    case 'sep':
+      return 9;
+    case 'oct':
+      return 10;
+    case 'nov':
+      return 11;
+    case 'dec':
+      return 12;
+  }
+};
+
+const dateStringToMs = (date: string) => {
+  const dateChunks = date.split('.');
+  const d = new Date(
+    `${getMonthNo(dateChunks[1])}/${dateChunks[0]}/${dateChunks[2]}`
+  );
+  return d.getTime();
+};
+
+const sortTableData = <TRowData>({
+  key,
+  data,
+}: {
+  key?: keyof TRowData;
+  data: TRowData[];
+}) => {
+  const newData = [...data];
+
+  if (!key) return newData;
+
+  const firstValue = data[0][key];
+  const isDate =
+    typeof firstValue === 'string' &&
+    /\d{1,2}\.\w{3}\.\d{4}$/g.test(firstValue);
+
+  for (let i = 0; i < newData.length; i++) {
+    for (let j = 0; j < newData.length - i - 1; j++) {
+      const firstValue = newData[j][key];
+      const secondValue = newData[j + 1][key];
+
+      if (
+        (isDate &&
+          typeof firstValue === 'string' &&
+          typeof secondValue === 'string' &&
+          dateStringToMs(secondValue) < dateStringToMs(firstValue)) ||
+        (!isDate && secondValue < firstValue)
+      )
+        [newData[j], newData[j + 1]] = [newData[j + 1], newData[j]];
+    }
+  }
+
+  return newData.slice();
+};
+
 const getTagClassName = (status: Status) => {
   switch (status) {
     case 'approved':
@@ -129,5 +201,6 @@ export {
   searchByQuery,
   formatNumber,
   formatElapsedTime,
+  sortTableData,
   getTagClassName,
 };
