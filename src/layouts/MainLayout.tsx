@@ -10,6 +10,7 @@ import SearchContextProvider from '../context/SearchContextProvider';
 // * components
 import Sidebar from '../features/Sidebar';
 import Breadcrumbs from '../components/Breadcrumbs';
+import Toolbar from '../features/Toolbar';
 import Footer from '../features/Footer';
 
 // * types
@@ -30,10 +31,10 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
           <main className='bg-light dark:bg-d-primary-dark px-4 pt-12 overflow-x-hidden overflow-y-auto'>
             <header className='page-header flex flex-col'>
               <Breadcrumbs />
-
               <h1 className='page-title text-primary dark:text-white text-2xl font-semibold'>
                 {title}
               </h1>
+              <Toolbar />
             </header>
             <div className='content grid grid-cols-12 auto-rows-max gap-3 mt-6'>
               {children}
