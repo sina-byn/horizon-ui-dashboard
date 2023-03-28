@@ -41,7 +41,7 @@ const Sidebar = () => {
           <p className='text-sm'>
             to get access to all features! Connect With Venus World!
           </p>
-          <div className='icon grid place-items-center absolute -top-10 mx-auto aspect-square w-20 rounded-full bg-gradient-to-br from-[#868CFF] to-[#4318FF] border-4 border-white p-2'>
+          <div className='icon grid place-items-center absolute -top-10 mx-auto aspect-square w-20 rounded-full bg-gradient-to-br from-[#868CFF] to-[#4318FF] border-4 border-white dark:border-d-primary p-2'>
             <img src='/horizon-logo.svg' alt='horizon logo' />
           </div>
         </Card>
