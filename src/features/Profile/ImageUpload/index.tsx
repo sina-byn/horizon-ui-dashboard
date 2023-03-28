@@ -46,7 +46,7 @@ const ImageUpload = () => {
                   <h6 className='text-sm text-primary dark:text-white font-bold -mb-2'>
                     Files <i className='fa-solid fa-arrow-down fa-sm' />
                   </h6>
-                  <div className='files-list grid grid-cols-1 gap-y-3 pb-3'>
+                  <div className='files-list grid grid-cols-1 gap-y-3 pb-2 dark:pb-0'>
                     {images.length > 0 &&
                       images.map((image, idx) => (
                         <ImageCard key={idx} image={image} />

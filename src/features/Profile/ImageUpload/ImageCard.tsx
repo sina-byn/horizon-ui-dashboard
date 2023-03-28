@@ -13,7 +13,8 @@ const ImageCard = ({ image }: ImageCardProps) => {
   return (
     <Card
       style={{ padding: '0.6rem 0.8rem' }}
-      className='image-card flex items-center gap-x-2 dark:bg-d-light shadow-custom dark:shadow-none'
+      darkModeClassName='dark:bg-d-light'
+      className='image-card flex items-center gap-x-2 shadow-custom dark:shadow-none'
     >
       <figure className='w-10 h-10'>
         <img
