@@ -115,7 +115,7 @@ const PieChart = ({
         <Tooltip
           wrapperStyle={{ outline: 'none' }}
           content={
-            <CustomTooltip className='bg-white dark:bg-d-primary dark:text-white' />
+            <CustomTooltip />
           }
         />
       </RePieChart>
