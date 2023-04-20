@@ -74,6 +74,7 @@ const KanbanCard = (props: KanbanCardProps) => {
             <Dropdown<KanbanCardData>
               label='state'
               field='state'
+              title={cardData.state}
               setValue={setValue}
               className='w-28'
               items={['updating', 'pending', 'error', 'done']}
