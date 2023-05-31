@@ -41,7 +41,7 @@ const searchByQuery = <TElement extends HTMLElement>(
   if (queryIdx === -1) return;
 
   const highlightedResult = `
-      <mark class='text-black'>${text.slice(
+      <mark class='text-black scroll-mt-[200px]'>${text.slice(
         queryIdx,
         queryIdx + query.length
       )}</mark>

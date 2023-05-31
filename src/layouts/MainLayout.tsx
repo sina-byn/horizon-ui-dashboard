@@ -11,6 +11,7 @@ import SearchContextProvider from '../context/SearchContextProvider';
 import Sidebar from '../features/Sidebar';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Toolbar from '../features/Toolbar';
+import SearchToolbar from '../features/SearchToolbar';
 import Footer from '../features/Footer';
 
 // * types
@@ -28,18 +29,21 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
       <div className='layout-wrap grid grid-cols-[50px,_1fr] md:grid-cols-[270px,_1fr] grid-rows-1 h-screen overflow-hidden'>
         <Sidebar />
         <SearchContextProvider>
-          <main className='bg-light dark:bg-d-primary-dark px-4 overflow-x-hidden overflow-y-auto'>
-            <header className='page-header flex flex-col sticky inset-0 z-50 bg-light dark:bg-d-primary-dark pt-12 pb-6'>
+          <main className='flex flex-col bg-light dark:bg-d-primary-dark px-4 overflow-hidden'>
+            <header className='page-header flex flex-col bg-light dark:bg-d-primary-dark pt-12 pb-6'>
               <Breadcrumbs />
               <h1 className='page-title text-primary dark:text-white text-2xl font-semibold'>
                 {title}
               </h1>
               <Toolbar />
+              <SearchToolbar />
             </header>
-            <div className='content grid grid-cols-12 auto-rows-max gap-3'>
-              {children}
+            <div className='content h-screen overflow-y-auto'>
+              <div className='content-wrap grid grid-cols-12 auto-rows-max gap-3'>
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
           </main>
         </SearchContextProvider>
       </div>
