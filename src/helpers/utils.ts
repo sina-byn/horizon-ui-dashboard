@@ -4,13 +4,10 @@ import type { Status } from '../components/Tag';
 
 const toPercent = (value: number, base: number) => (value / base) * 100;
 
-const capitalize = (str: string) =>
-  str.slice(0, 1).toUpperCase() + str.slice(1);
+const capitalize = (str: string) => str.slice(0, 1).toUpperCase() + str.slice(1);
 
 const isTouchScreen = () =>
-  'ontouchstart' in window ||
-  navigator.maxTouchPoints > 0 ||
-  'msMaxTouchPoints' in navigator;
+  'ontouchstart' in window || navigator.maxTouchPoints > 0 || 'msMaxTouchPoints' in navigator;
 
 const searchByQuery = <TElement extends HTMLElement>(
   query: string,
@@ -48,16 +45,13 @@ const searchByQuery = <TElement extends HTMLElement>(
     `;
 
   ref.current!.innerHTML =
-    text.slice(0, queryIdx) +
-    highlightedResult +
-    text.slice(queryIdx + query.length);
+    text.slice(0, queryIdx) + highlightedResult + text.slice(queryIdx + query.length);
 };
 
 const formatNumber = (num: number) => {
   if (num < 1000) return num;
   if (num >= 1000 && num < 1000000) return Math.floor(num / 1000) + 'K';
-  if (num >= 1000000 && num < 1000000000)
-    return Math.floor(num / 1000000) + 'M';
+  if (num >= 1000000 && num < 1000000000) return Math.floor(num / 1000000) + 'M';
   return Math.floor(num / 1000000000) + 'B';
 };
 
@@ -125,27 +119,17 @@ const getMonthNo = (month: string) => {
 
 const dateStringToMs = (date: string) => {
   const dateChunks = date.split('.');
-  const d = new Date(
-    `${getMonthNo(dateChunks[1])}/${dateChunks[0]}/${dateChunks[2]}`
-  );
+  const d = new Date(`${getMonthNo(dateChunks[1])}/${dateChunks[0]}/${dateChunks[2]}`);
   return d.getTime();
 };
 
-const sortTableData = <TRowData>({
-  key,
-  data,
-}: {
-  key?: keyof TRowData;
-  data: TRowData[];
-}) => {
+const sortTableData = <TRowData>({ key, data }: { key?: keyof TRowData; data: TRowData[] }) => {
   const newData = [...data];
 
   if (!key) return newData;
 
   const firstValue = data[0][key];
-  const isDate =
-    typeof firstValue === 'string' &&
-    /\d{1,2}\.\w{3}\.\d{4}$/g.test(firstValue);
+  const isDate = typeof firstValue === 'string' && /\d{1,2}\.\w{3}\.\d{4}$/g.test(firstValue);
 
   for (let i = 0; i < newData.length; i++) {
     for (let j = 0; j < newData.length - i - 1; j++) {
@@ -164,6 +148,19 @@ const sortTableData = <TRowData>({
   }
 
   return newData.slice();
+};
+
+const formatSeconds = (seconds: number) => {
+  if (seconds === 0 || seconds === Infinity) return 'N/A';
+
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  let result = '';
+
+  hours > 0 ? (result += hours + 'h ') : null;
+  minutes > 0 ? (result += minutes + 'm ') : null;
+
+  return result;
 };
 
 const notify = (message: string) => {
@@ -195,30 +192,14 @@ const getTagClassName = (status: Status) => {
   switch (status) {
     case 'approved':
     case 'done':
-      return [
-        'fa-check-circle',
-        'bg-green-500 text-white',
-        'text-green-500 bg-none',
-      ];
+      return ['fa-check-circle', 'bg-green-500 text-white', 'text-green-500 bg-none'];
     case 'disabled':
     case 'pending':
-      return [
-        'fa-circle-info',
-        'bg-orange-400 text-white',
-        'text-orange-400 bg-none',
-      ];
+      return ['fa-circle-info', 'bg-orange-400 text-white', 'text-orange-400 bg-none'];
     case 'error':
-      return [
-        'fa-circle-xmark',
-        'bg-red-500 text-white',
-        'text-red-500 bg-none',
-      ];
+      return ['fa-circle-xmark', 'bg-red-500 text-white', 'text-red-500 bg-none'];
     case 'updating':
-      return [
-        'fa-arrow-up',
-        'bg-blue-500 text-white',
-        'text-primary-light bg-none',
-      ];
+      return ['fa-arrow-up', 'bg-blue-500 text-white', 'text-primary-light bg-none'];
   }
 };
 
@@ -229,6 +210,7 @@ export {
   searchByQuery,
   formatNumber,
   formatElapsedTime,
+  formatSeconds,
   sortTableData,
   notify,
   getTagClassName,
