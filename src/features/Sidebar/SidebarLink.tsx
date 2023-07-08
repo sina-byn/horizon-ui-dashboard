@@ -64,7 +64,7 @@ const SidebarLink = ({ icon, title, href }: SidebarLinkProps) => {
           'link-text grow hidden md:block absolute md:static left-full -top-2 z-50',
           'text-left font-semibold whitespace-nowrap capitalize rounded-r-md',
           'bg-white md:bg-transparent dark:bg-d-primary dark:md:bg-transparent',
-          'shadow-custom dark:shadow-none md:shadow-none',
+          'shadow-tooltip dark:shadow-tooltip-dark md:shadow-none',
           'pl-3 pr-3 md:pr-0 py-2 md:py-0 mt-1',
           isActive && 'text-primary dark:text-white'
         )}
