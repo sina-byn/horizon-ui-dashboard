@@ -3,6 +3,7 @@ import clsx from 'clsx';
 // * components
 import IpIndicator from './IpIndicator';
 import BatteryIndicator from './BatteryIndicator';
+import OnlineIndicator from './OnlineIndicator';
 
 const StatusToolbar = () => {
   return (
@@ -13,6 +14,7 @@ const StatusToolbar = () => {
         'font-medium rounded-full transition-all duration-300 px-5 py-2'
       )}
     >
+      <OnlineIndicator />
       <IpIndicator />
       <BatteryIndicator />
     </div>
