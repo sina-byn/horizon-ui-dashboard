@@ -13,6 +13,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Toolbar from '../features/Toolbar';
 import SearchToolbar from '../features/SearchToolbar';
 import Footer from '../features/Footer';
+import StatusToolbar from '../features/StatusToolbar';
 
 // * types
 type MainLayoutProps = {
@@ -40,6 +41,7 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
             </header>
             <div className='content h-screen overflow-y-auto'>
               <div className='content-wrap grid grid-cols-12 auto-rows-max gap-3'>
+                <StatusToolbar />
                 {children}
               </div>
               <Footer />
