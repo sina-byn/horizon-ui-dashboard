@@ -70,7 +70,7 @@ const BatteryIndicator = () => {
       <div className='battery-indicator flex items-center gap-x-2'>
         <span
           className={clsx(
-            'material-symbols-outlined text-2xl mt-0.5',
+            'material-symbols-outlined text-2xl sm:mt-0.5',
             !charging && batteryLevel < 0.2 && 'rotate-90 animate-pulse',
             !charging && batteryLevel >= 0.2 && 'rotate-180',
             charging && 'rotate-90'
