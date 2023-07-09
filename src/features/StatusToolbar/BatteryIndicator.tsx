@@ -67,7 +67,7 @@ const BatteryIndicator = () => {
         </>
       }
     >
-      <div className='flex items-center gap-x-2'>
+      <div className='battery-indicator flex items-center gap-x-2'>
         <span
           className={clsx(
             'material-symbols-outlined text-2xl mt-0.5',
