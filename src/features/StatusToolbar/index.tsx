@@ -9,8 +9,8 @@ const StatusToolbar = () => {
   return (
     <div
       className={clsx(
-        'status-toolbar col-span-12 justify-self-end w-fit flex items-center gap-x-4',
-        'bg-white dark:bg-d-primary text-sm text-primary-dark dark:text-white shadow-custom dark:shadow-none',
+        'status-toolbar col-span-12 justify-self-end w-fit flex flex-col sm:flex-row items-end sm:items-center gap-x-4',
+        'bg-transparent sm:bg-white sm:dark:bg-d-primary text-sm text-primary-dark dark:text-white sm:shadow-custom dark:shadow-none',
         'font-medium rounded-full transition-all duration-300 px-5 py-2'
       )}
     >

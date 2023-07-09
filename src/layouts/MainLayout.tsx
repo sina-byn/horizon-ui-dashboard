@@ -31,7 +31,7 @@ const MainLayout = ({ title, children }: MainLayoutProps) => {
         <Sidebar />
         <SearchContextProvider>
           <main className='flex flex-col bg-light dark:bg-d-primary-dark px-4 overflow-hidden'>
-            <header className='page-header flex flex-col bg-light dark:bg-d-primary-dark pt-12 pb-6'>
+            <header className='page-header flex flex-col bg-light dark:bg-d-primary-dark pt-12 sm:pb-3'>
               <Breadcrumbs />
               <h1 className='page-title text-primary dark:text-white text-2xl font-semibold'>
                 {title}
